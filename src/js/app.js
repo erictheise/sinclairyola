@@ -1,6 +1,8 @@
 import { colors } from './colors'
 import { nearest_three } from "./distance";
 
+$(document).foundation();
+
 let
   data,
   graph
@@ -25,8 +27,8 @@ function drawVisualization() {
 
   // specify options
   const options = {
-    width: '840px',
-    height: '840px',
+    width: '720px',
+    height: '720px',
     style: 'dot-color',
     showPerspective: true,
     showLegend: false,

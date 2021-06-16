@@ -3,30 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <title>Sinclairyola 🖍 CSS Named Colors Cubed</title>
+  <link rel="stylesheet" href="node_modules/foundation-sites/dist/css/foundation.min.css">
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.slim.js"></script>
+  <script type="text/javascript" src="node_modules/what-input/dist/what-input.min.js"></script>
+  <script type="text/javascript" src="node_modules/foundation-sites/dist/js/foundation.js"></script>
   <script type="text/javascript" src="node_modules/vis-graph3d/dist/vis-graph3d.min.js"></script>
   <script type="text/javascript" src="node_modules/chroma-js/chroma.min.js"></script>
-  <script type="text/javascript" src="dist/app.js"></script>
   <link rel="stylesheet" href="dist/app.css">
 </head>
 <body>
 
-<div id="container">
-  <h2>Sinclairyola</h2>
-
-  <div id="panel">
-    <form action="#">
-      <fieldset>
-        <legend>Working free color</legend>
-        <label><input type="number" id="freecolor" name="freecolor">RGB</label>
-        <p>
-          nearest three:
-        </p>
-      </fieldset>
-    </form>
+<div class="grid-container">
+  <div class="grid-x grid-margin-x">
+    <div class="cell small-12">
+      <h1>Sinclairyola<small> Exploring CSS Named Colors</small></h1>
+    </div>
   </div>
+  <div class="grid-x grid-margin-x">
+    <div class="cell small-12 medium-9">
+      <div id="graph"></div>
+    </div>
+    <div class="cell small-12 medium-3">
+      <div id="panel">
+        <form action="#">
+          <fieldset>
+            <legend>Working free color</legend>
 
-  <div id="graph"></div>
+            <div class="slider vertical" data-slider data-initial-start="128" data-end="256" data-vertical="true">
+              <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="r"></span>
+              <span class="slider-fill" data-slider-fill></span>
+            </div>
+            <label><input type="number" id="r" name="r">R</label>
+
+            <p>
+              nearest three:
+            </p>
+
+          </fieldset>
+        </form>
+
+        <div class="callout">
+          <h2>About Sinclairyola</h2>
+          <p>
+            How CSS named colors came to be
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </div>
+
+<script type="text/javascript" src="dist/app.js"></script>
 
 </body>
 </html>

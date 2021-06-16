@@ -1,0 +1,6 @@
+// https://laracasts.com/discuss/channels/tips/using-foundation-630-with-laravel-54
+
+@import "settings";
+@import "../../node_modules/foundation-sites/scss/foundation";
+@include foundation-everything(true);
+@import 'custom';
