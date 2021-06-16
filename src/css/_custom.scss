@@ -9,7 +9,13 @@ h1 {
 
 h2 {
   text-align: center;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
+}
+
+h3 {
+  padding-top: 1.2rem;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 #graph {
@@ -24,6 +30,24 @@ fieldset {
   padding: 1rem;
 }
 
+.slider.vertical {
+  height: 8rem;
+}
+
+label {
+  text-align: center;
+}
+
+.patch {
+  height: 3rem;
+  background-color: gray;
+  border: dashed black 1px;
+}
+
 .callout {
   border: solid black 1px;
+}
+
+p {
+  font-size: 1rem;
 }

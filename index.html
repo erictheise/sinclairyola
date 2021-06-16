@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Sinclairyola 🖍 CSS Named Colors Cubed</title>
+  <title>Sinclairyola 🖍 CSS Color Names Cubed</title>
   <link rel="stylesheet" href="node_modules/foundation-sites/dist/css/foundation.min.css">
   <script type="text/javascript" src="node_modules/jquery/dist/jquery.slim.js"></script>
   <script type="text/javascript" src="node_modules/what-input/dist/what-input.min.js"></script>
@@ -16,7 +16,7 @@
 <div class="grid-container">
   <div class="grid-x grid-margin-x">
     <div class="cell small-12">
-      <h1>Sinclairyola<small> Exploring CSS Named Colors</small></h1>
+      <h1>Sinclairyola<small> Exploring CSS Color Names</small></h1>
     </div>
   </div>
   <div class="grid-x grid-margin-x">
@@ -25,27 +25,58 @@
     </div>
     <div class="cell small-12 medium-3">
       <div id="panel">
+
         <form action="#">
           <fieldset>
-            <legend>Working free color</legend>
+            <legend>Color scratchpad</legend>
 
-            <div class="slider vertical" data-slider data-initial-start="128" data-end="256" data-vertical="true">
-              <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="r"></span>
-              <span class="slider-fill" data-slider-fill></span>
+            <div class="grid-x grid-margin-x">
+              <div class="cell small-4">
+                <div id="r-slider" class="slider vertical" data-slider data-initial-start="128" data-end="255"
+                data-vertical="true">
+                  <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="r"></span>
+                  <span class="slider-fill" data-slider-fill></span>
+                </div>
+                <label><input type="number" id="r" name="r">R</label>
+              </div>
+
+              <div class="cell small-4">
+                <div id="g-slider" class="slider vertical" data-slider data-initial-start="128" data-end="255"
+                     data-vertical="true">
+                  <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="g"></span>
+                  <span class="slider-fill" data-slider-fill></span>
+                </div>
+                <label><input type="number" id="g" name="g">G</label>
+              </div>
+
+              <div class="cell small-4">
+                <div id="b-slider" class="slider vertical" data-slider data-initial-start="128" data-end="255"
+                     data-vertical="true">
+                  <span class="slider-handle" data-slider-handle role="slider" tabindex="1" aria-controls="b"></span>
+                  <span class="slider-fill" data-slider-fill></span>
+                </div>
+                <label><input type="number" id="b" name="b">B</label>
+              </div>
+
             </div>
-            <label><input type="number" id="r" name="r">R</label>
 
-            <p>
-              nearest three:
-            </p>
+            <div class="grid-x grid-margin-x">
+              <div id="patch" class="cell small-12 patch"></div>
+            </div>
+
+            <h3>
+              Nearest three
+            </h3>
+            <div id="nearest-three"></div>
 
           </fieldset>
         </form>
 
         <div class="callout">
-          <h2>About Sinclairyola</h2>
           <p>
-            How CSS named colors came to be
+            <em>Sinclairyola</em>'s a combination of <em>Sinclair</em> & <em>Crayola</em>, companies whose
+            color names were incorporated into the set of CSS named colors. Julianne Tveten's <a
+              href="https://arstechnica.com/information-technology/2015/10/tomato-versus-ff6347-the-tragicomic-history-of-css-color-names/">“Tomato” versus “#FF6347”—the tragicomic history of CSS color names</a> is an excellent tracing through an unfortunate history.
           </p>
         </div>
 

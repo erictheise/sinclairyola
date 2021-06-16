@@ -1,11 +1,12 @@
 import { colors } from './colors'
-import { nearest_three } from "./distance";
+import { nearestThree } from "./distance";
 
 $(document).foundation();
 
 let
   data,
-  graph
+  graph,
+  patch = document.getElementById('patch')
 ;
 
 // Called when the Visualization API is loaded.
@@ -13,7 +14,6 @@ function drawVisualization() {
   data = new vis.DataSet();
 
   colors.forEach(function (c) {
-    console.info(chroma(c.name).rgb());
     data.add({
       x: chroma(c.name).rgb()[0],
       y: chroma(c.name).rgb()[1],
@@ -22,8 +22,6 @@ function drawVisualization() {
       extra: `${c.name} • ${c.hex} • ${chroma(c.name).rgb()}`
     })
   })
-
-  console.info(nearest_three('#3465f3'));
 
   // specify options
   const options = {
@@ -70,10 +68,34 @@ function drawVisualization() {
   graph = new vis.Graph3d(container, data, options);
 
   if (camera) graph.setCameraPosition(camera); // restore camera position
-
-  document.getElementById("style").onchange = drawVisualization;
 }
 
 window.addEventListener("load", () => {
   drawVisualization();
+});
+
+$('#r-slider').on('moved.zf.slider', () => {
+  let
+    r = document.getElementById('r').value,
+    c = chroma(window.getComputedStyle(patch).backgroundColor).set('rgb.r', r)
+  ;
+  patch.setAttribute('style', `background-color: ${c}`);
+  console.info(nearestThree(c));
+});
+$('#g-slider').on('moved.zf.slider', () => {
+  let
+    g = document.getElementById('g').value,
+    c = chroma(window.getComputedStyle(patch).backgroundColor).set('rgb.g', g)
+  ;
+  patch.setAttribute('style', `background-color: ${c}`);
+  console.info(nearestThree(c));
+});
+$('#b-slider').on('moved.zf.slider', () => {
+  let
+    b = document.getElementById('b').value,
+    c = chroma(window.getComputedStyle(patch).backgroundColor).set('rgb.b', b)
+  ;
+  patch.setAttribute('style', `background-color: ${c}`);
+  nearestThree(c);
+  console.info(nearestThree(c));
 });
