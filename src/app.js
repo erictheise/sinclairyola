@@ -1,4 +1,5 @@
-import { colors } from './colors.js'
+import { colors } from './colors'
+import { nearest_three } from "./distance";
 
 let
   data,
@@ -16,19 +17,27 @@ function drawVisualization() {
       y: chroma(c.name).rgb()[1],
       z: chroma(c.name).rgb()[2],
       style: {"fill": c.hex, "stroke":"dimgray"},
-      extra: `${c.name} (${c.hex})`
+      extra: `${c.name} • ${c.hex} • ${chroma(c.name).rgb()}`
     })
   })
 
+  console.info(nearest_three('#3465f3'));
+
   // specify options
-  var options = {
-    width: '1000px',
-    height: '1000px',
+  const options = {
+    width: '840px',
+    height: '840px',
     style: 'dot-color',
     showPerspective: true,
     showLegend: false,
     showGrid: true,
-    showShadow: false,
+    showShadow: true,
+    xLabel: 'Red',
+    yLabel: 'Green',
+    zLabel: 'Blue',
+    xStep: 32,
+    yStep: 32,
+    zStep: 32,
     tooltip: function (point) {
       return point.data.extra;
     },
@@ -36,7 +45,7 @@ function drawVisualization() {
     // Tooltip default styling can be overridden
     tooltipStyle: {
       content: {
-        background: "rgba(255, 255, 255, 0.84)",
+        background: "rgba(255, 255, 255, 0.88)",
         padding: "10px",
         borderRadius: "10px",
       },
@@ -55,7 +64,7 @@ function drawVisualization() {
   var camera = graph ? graph.getCameraPosition() : null;
 
   // create our graph
-  var container = document.getElementById("mygraph");
+  var container = document.getElementById("graph");
   graph = new vis.Graph3d(container, data, options);
 
   if (camera) graph.setCameraPosition(camera); // restore camera position

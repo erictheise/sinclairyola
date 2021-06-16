@@ -1,7 +1,16 @@
 body {
-  font: 10pt arial;
+  font: 16pt Frutiger sans-serif;
 }
-div#mygraph {
-  width: 100%;
+
+#graph {
+  padding: 0 20px;
+  width: 80%;
+  height: 100%;
+}
+
+#panel {
+  float: right;
+  padding: 0 20px;
+  width: 20%;
   height: 100%;
 }
