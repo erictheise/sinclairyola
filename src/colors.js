@@ -1,4 +1,4 @@
-[
+export const colors = [
   {
     "spec": "CSS Level 1",
     "hex": "#000000",
