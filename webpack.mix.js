@@ -13,6 +13,11 @@ let mix = require('laravel-mix');
 
 mix.js('src/js/app.js', 'dist/').sass('src/css/app.scss', 'dist/');
 mix.copy('node_modules/jquery/dist/jquery.slim.js', 'dist/');
+mix.copy('node_modules/what-input/dist/what-input.min.js', 'dist/');
+mix.copy('node_modules/foundation-sites/dist/js/foundation.js', 'dist/');
+mix.copy('node_modules/vis-graph3d/dist/vis-graph3d.min.js', 'dist/');
+mix.copy('node_modules/chroma-js/chroma.min.js', 'dist/');
+
 
 // Full API
 // mix.js(src, output);
