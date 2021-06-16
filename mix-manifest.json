@@ -3,6 +3,7 @@
     "/dist/app.css": "/dist/app.css",
     "/dist/jquery.slim.js": "/dist/jquery.slim.js",
     "/dist/what-input.min.js": "/dist/what-input.min.js",
+    "/dist/foundation.min.css": "/dist/foundation.min.css",
     "/dist/foundation.js": "/dist/foundation.js",
     "/dist/vis-graph3d.min.js": "/dist/vis-graph3d.min.js",
     "/dist/chroma.min.js": "/dist/chroma.min.js"
