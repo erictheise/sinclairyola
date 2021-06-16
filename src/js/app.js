@@ -80,6 +80,7 @@ $('#r-slider').on('moved.zf.slider', () => {
     c = chroma(window.getComputedStyle(patch).backgroundColor).set('rgb.r', r)
   ;
   patch.setAttribute('style', `background-color: ${c}`);
+  nearestThree(c);
 });
 $('#g-slider').on('moved.zf.slider', () => {
   let
@@ -87,6 +88,7 @@ $('#g-slider').on('moved.zf.slider', () => {
     c = chroma(window.getComputedStyle(patch).backgroundColor).set('rgb.g', g)
   ;
   patch.setAttribute('style', `background-color: ${c}`);
+  nearestThree(c);
 });
 $('#b-slider').on('moved.zf.slider', () => {
   let
