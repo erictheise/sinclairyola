@@ -1,8 +1,8 @@
 {
   "name": "sinclairyola",
-  "version": "0.1.0",
-  "description": "CSS named color explorer",
-  "main": "''",
+  "version": "0.8.0",
+  "description": "Sinclairyola: Exploring CSS Color Names",
+  "main": "",
   "scripts": {
     "dev": "npm run development",
     "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -17,7 +17,9 @@
     "url": "git+https://github.com/erictheise/sinclairyola.git"
   },
   "keywords": [
-    "color"
+    "color",
+    "css",
+    "matching"
   ],
   "author": "Eric Theise",
   "license": "MIT",
